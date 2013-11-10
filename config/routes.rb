@@ -1,4 +1,6 @@
 Gemkeeper::Application.routes.draw do
+  resources :participations
+
   resources :roles
 
   resources :games

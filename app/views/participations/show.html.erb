@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Session:</strong>
+  <%= @participation.session_id %>
+</p>
+
+<p>
+  <strong>Player:</strong>
+  <%= @participation.player_id %>
+</p>
+
+<p>
+  <strong>Role:</strong>
+  <%= @participation.role_id %>
+</p>
+
+<p>
+  <strong>Score:</strong>
+  <%= @participation.score %>
+</p>
+
+<p>
+  <strong>Has won:</strong>
+  <%= @participation.has_won %>
+</p>
+
+<%= link_to 'Edit', edit_participation_path(@participation) %> |
+<%= link_to 'Back', participations_path %>
