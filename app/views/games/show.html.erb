@@ -2,10 +2,9 @@
 
 <p id="notice"><%= notice %></p>
 
-<p><%= link_to 'New Session', new_game_session_path(@game) %></p>
-<p><%= link_to 'View Sessions', game_sessions_path(@game) %></p>
-
 <p>Total Sessions: <%= @total %></p>
 <p>Wins: <%= @wins %></p>
 <p>Losses: <%= @losses %></p>
 <p>Overall Win Ratio: <%= @ratio %>%</p>
+
+<p><%= link_to 'Sessions', sessions_path %></p>
