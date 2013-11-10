@@ -1,1 +1,1 @@
-json.extract! @session, :game_id, :date, :comments, :created_at, :updated_at
+json.extract! @session, :game_id, :date, :is_stalemate, :comments, :created_at, :updated_at

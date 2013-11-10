@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131110004851) do
+ActiveRecord::Schema.define(version: 20131110022943) do
 
   create_table "games", force: true do |t|
     t.string   "name"
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20131110004851) do
     t.integer  "player_id"
     t.integer  "role_id"
     t.integer  "score"
-    t.boolean  "has_won"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -49,6 +48,7 @@ ActiveRecord::Schema.define(version: 20131110004851) do
     t.text     "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_stalemate"
   end
 
 end

@@ -5,6 +5,7 @@
     <tr>
       <th>Game</th>
       <th>Date</th>
+      <th>Stalemate</th>
       <th>Comments</th>
       <th></th>
       <th></th>
@@ -17,6 +18,7 @@
       <tr>
         <td><%= session.game_id %></td>
         <td><%= session.date %></td>
+        <td><%= session.is_stalemate %></td>
         <td><%= session.comments %></td>
         <td><%= link_to 'Show', session %></td>
         <td><%= link_to 'Edit', edit_session_path(session) %></td>

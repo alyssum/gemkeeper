@@ -5,11 +5,9 @@ one:
   player_id: 1
   role_id: 1
   score: 1
-  has_won: false
 
 two:
   session_id: 1
   player_id: 1
   role_id: 1
   score: 1
-  has_won: false

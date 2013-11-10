@@ -7,7 +7,6 @@
       <th>Player</th>
       <th>Role</th>
       <th>Score</th>
-      <th>Has won</th>
       <th></th>
       <th></th>
       <th></th>
@@ -21,7 +20,6 @@
         <td><%= participation.player_id %></td>
         <td><%= participation.role_id %></td>
         <td><%= participation.score %></td>
-        <td><%= participation.has_won %></td>
         <td><%= link_to 'Show', participation %></td>
         <td><%= link_to 'Edit', edit_participation_path(participation) %></td>
         <td><%= link_to 'Destroy', participation, method: :delete, data: { confirm: 'Are you sure?' } %></td>

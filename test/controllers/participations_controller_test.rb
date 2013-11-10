@@ -18,7 +18,7 @@ class ParticipationsControllerTest < ActionController::TestCase
 
   test "should create participation" do
     assert_difference('Participation.count') do
-      post :create, participation: { has_won: @participation.has_won, player_id: @participation.player_id, role_id: @participation.role_id, score: @participation.score, session_id: @participation.session_id }
+      post :create, participation: { player_id: @participation.player_id, role_id: @participation.role_id, score: @participation.score, session_id: @participation.session_id }
     end
 
     assert_redirected_to participation_path(assigns(:participation))
@@ -35,7 +35,7 @@ class ParticipationsControllerTest < ActionController::TestCase
   end
 
   test "should update participation" do
-    patch :update, id: @participation, participation: { has_won: @participation.has_won, player_id: @participation.player_id, role_id: @participation.role_id, score: @participation.score, session_id: @participation.session_id }
+    patch :update, id: @participation, participation: { player_id: @participation.player_id, role_id: @participation.role_id, score: @participation.score, session_id: @participation.session_id }
     assert_redirected_to participation_path(assigns(:participation))
   end
 

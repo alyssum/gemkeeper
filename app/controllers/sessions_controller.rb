@@ -69,6 +69,6 @@ class SessionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def session_params
-      params.require(:session).permit(:game_id, :date, :comments)
+      params.require(:session).permit(:game_id, :date, :is_stalemate, :comments)
     end
 end
