@@ -15,6 +15,14 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+
+  <p>Roles</p>
+  <%= f.fields_for :roles do |r| %>
+    <div class="field">
+      <%= r.text_field :name %>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
