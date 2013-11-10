@@ -1,15 +1,7 @@
 Gemkeeper::Application.routes.draw do
   get "main/index"
 
-  resources :sessions
-
-  resources :participations
-
-  resources :roles
-
-  resources :games
-
-  resources :players
+  resources :sessions, :games, :players
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
