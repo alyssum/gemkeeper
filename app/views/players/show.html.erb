@@ -1,14 +1,16 @@
-<p id="notice"><%= notice %></p>
+<div data-role="header">
+  <%= link_to 'Edit', edit_player_path(@player), "data-icon" => "edit", "class" => "ui-btn-right" %>
+  <%= link_to 'Back', :back, "data-icon" => "back", "class" => "ui-btn-left" %>
+  <h3><%= @player.name %></h3>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @player.name %>
-</p>
+<div data-role="content">
+  <p id="notice" class="ui-bar-a ui-bar ui-corner-all" ><%= notice %></p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @player.email %>
-</p>
+  <h4>Name</h4>
+  <p><%= @player.name %></p>
 
-<%= link_to 'Edit', edit_player_path(@player) %> |
-<%= link_to 'Back', players_path %>
+  <h4>Email</h4>
+  <p><%= @player.email %></p>
+
+</div>

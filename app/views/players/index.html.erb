@@ -1,29 +1,18 @@
-<h1>Listing players</h1>
+<div data-role="header">
+  <%= link_to 'Add', new_player_path, "data-icon" => "plus", "class" => "ui-btn-right" %>
+  <%= link_to 'Refresh', url_for(params), "data-icon" => "refresh", "class" => "ui-btn-left" %>
+  <h3>Players</h3>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div data-role="content">
+  <ul data-role="listview" data-inset="true">
     <% @players.each do |player| %>
-      <tr>
-        <td><%= player.name %></td>
-        <td><%= player.email %></td>
-        <td><%= link_to 'Show', player %></td>
-        <td><%= link_to 'Edit', edit_player_path(player) %></td>
-        <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <li data-theme="c">
+      <a href="<%= player_path(player) %>" data-transition="slide">
+        <h2><%= player.name %></h2>
+      </a>
+      </li>
     <% end %>
-  </tbody>
-</table>
+  </ul>
+</div>
 
-<br>
-
-<%= link_to 'New Player', new_player_path %>
