@@ -1,24 +1,38 @@
-<p id="notice"><%= notice %></p>
+<div data-role="header">
+  <%= link_to 'Back', new_session_path, "data-icon" => "plus", "class" => "ui-btn-right" %>
+  <%= link_to 'Edit', url_for(params), "data-icon" => "edit", "class" => "ui-btn-left" %>
+  <h3>Session</h3>
+</div>
 
-<p>
-  <strong>Game:</strong>
-  <%= @session.game_id %>
-</p>
+<div data-role="content">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @session.date %>
-</p>
+  <div>
+    <h4>Game</h4>
+    <p><%= @session.game.name %></p>
+  </div>
 
-<p>
-  <strong>Stalemate?:</strong>
-  <%= @session.is_stalemate %>
-</p>
+  <div>
+    <h4>Date</h4>
+    <p><%= @session.date.strftime("%A, %e %B %Y %l:%M%p") %></p>
+  </div>
 
-<p>
-  <strong>Comments:</strong>
-  <%= @session.comments %>
-</p>
+  <div>
+    <h4>Stalemate?</h4>
+    <p><%= @session.is_stalemate %></p>
+  </div>
 
-<%= link_to 'Edit', edit_session_path(@session) %> |
-<%= link_to 'Back', sessions_path %>
+  <div>
+    <h4>Comments</h4>
+    <p><%= @session.comments %></p>
+  </div>
+
+  <div>
+    <h4>Players</h4>
+    <% @session.participations.each do |p| %>
+      <p><%= p.player.name %> (<%= p.role.name %>)</p>
+    <% end %>
+  </div>
+
+</div>
+
