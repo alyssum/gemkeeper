@@ -1,6 +1,6 @@
 <div data-role="header">
-  <%= link_to 'Back', new_session_path, "data-icon" => "plus", "class" => "ui-btn-right" %>
-  <%= link_to 'Edit', url_for(params), "data-icon" => "edit", "class" => "ui-btn-left" %>
+  <%= link_to 'Edit', edit_session_path(@session), "data-icon" => "edit", "class" => "ui-btn-right" %>
+  <%= link_to 'Back', :back, "data-icon" => "plus", "class" => "ui-btn-left" %>
   <h3>Session</h3>
 </div>
 
