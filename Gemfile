@@ -45,6 +45,9 @@ group :production do
   gem 'rails_12factor', '0.0.2'
 end
 
+# Dump database contents to a seed file
+gem "seed_dump", "~> 2.0.0"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
