@@ -17,15 +17,15 @@
   </div>
   <div class="field">
     <%= f.label :date %><br>
-    <%= f.datetime_select :date %>
-  </div>
-  <div class="field">
-    <%= f.label :is_stalemate %><br>
-    <%= f.check_box :is_stalemate %>
+    <%= f.text_field :date,  "type" => "datetime-local", "data-clear-btn" => "false", "value" => @session.date.strftime("%Y-%m-%dT%H:%M") %>
   </div>
   <div class="field">
     <%= f.label :comments %><br>
     <%= f.text_area :comments %>
+  </div>
+  <div class="field">
+    <%= f.label :is_stalemate %><br>
+    <%= f.check_box :is_stalemate %>
   </div>
   <div class="actions">
     <%= f.submit %>
