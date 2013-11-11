@@ -4,7 +4,8 @@ class SessionsController < ApplicationController
   # GET /sessions
   # GET /sessions.json
   def index
-    @sessions = Session.all
+    @sessions = Session.order("date desc")
+    @session_dates = @sessions.group_by {|s| s.date.to_date }
   end
 
   # GET /sessions/1
