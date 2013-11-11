@@ -1,10 +1,47 @@
-<h1><%= @game.name %> (<%= link_to 'Edit', edit_game_path(@game) %>)</h1>
+<div data-role="header">
+  <%= link_to 'Edit', edit_game_path(@game), "data-icon" => "edit", "class" => "ui-btn-right" %>
+  <%= link_to 'Back', :back, "data-icon" => "back", "class" => "ui-btn-left" %>
+  <h3><%= @game.name %></h3>
+</div>
 
-<p id="notice"><%= notice %></p>
+<div data-role="content">
+  <p id="notice" class="ui-bar-a ui-bar ui-corner-all" ><%= notice %></p>
 
-<p>Total Sessions: <%= @total %></p>
-<p>Wins: <%= @wins %></p>
-<p>Losses: <%= @losses %></p>
-<p>Overall Win Ratio: <%= @ratio %>%</p>
+  <div class="ui-grid-b">
+    <div class="ui-block-a" style="text-align: center">
+      <h4>Total Sessions</h4>
+      <h4><%= @session_count %></h4>
+    </div>
+    <div class="ui-block-b" style="text-align: center">
+      <h4>Stalemates</h4> 
+      <h4><%= @stalemate_count %></h4>
+    </div>
+    <div class="ui-block-c" style="text-align: center">
+      <h4>Overall Stalemate Ratio</h4> 
+      <h4><%= @stalemate_ratio %>%</h4>
+    </div>
+  </div>
 
-<p><%= link_to 'Sessions', sessions_path %></p>
+  <table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive"
+    data-column-btn-theme="b" data-column-popup-theme="a">
+    <thead>
+      <tr class="ui-bar-d">
+        <th data-priority="5">Rank</th>
+        <th>Player</th>
+        <th data-priority="1"><abbr title="Win Ratio">Ratio</abbr></th>
+        <th data-priority="3">Sessions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @top_players.each do |name, p| %>
+        <tr>
+          <td></td>
+          <td><%= name %></td>
+          <td></td>
+          <td><%= p.count %></td>
+        </tr>
+      <% end %>  
+    </tbody>
+  </table>
+
+</div>

@@ -11,10 +11,11 @@ class GamesController < ApplicationController
   # GET /games/1.json
   def show
     # Calculate summary statistics
-    @total = @game.sessions.count 
-    @wins = @game.sessions.select { |x| !x.is_stalemate? }.count
-    @losses = @game.sessions.select { |x| x.is_stalemate? }.count
-    @ratio = (@wins.to_f / @total) * 100
+    @stalemate_sessions = @game.sessions.select { |x| x.is_stalemate? }
+    @session_count = @game.sessions.count 
+    @stalemate_count = @stalemate_sessions.count 
+    @stalemate_ratio = (@stalemate_count.to_f / @session_count) * 100
+    @top_players = @game.players.group_by { |p| p.name }.sort { |a, b| b.count <=> a.count }
   end
 
   # GET /games/new
