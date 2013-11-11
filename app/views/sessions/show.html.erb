@@ -1,38 +1,29 @@
 <div data-role="header">
   <%= link_to 'Edit', edit_session_path(@session), "data-icon" => "edit", "class" => "ui-btn-right" %>
-  <%= link_to 'Back', :back, "data-icon" => "plus", "class" => "ui-btn-left" %>
+  <%= link_to 'Back', :back, "data-icon" => "back", "class" => "ui-btn-left" %>
   <h3>Session</h3>
 </div>
 
 <div data-role="content">
-  <p id="notice"><%= notice %></p>
+  <p id="notice" class="ui-bar-a ui-bar ui-corner-all" ><%= notice %></p>
 
-  <div>
-    <h4>Game</h4>
-    <p><%= @session.game.name %></p>
+  <h4 style="margin-bottom: 0;"><%= @session.game.name %></h4>
+  <p style="margin-top: 0;"><i><%= @session.date.strftime("%A, %e %B %Y %l:%M%p") %></i></p>
+
+  <div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="b" data-content-theme="d">
+    <h4>Players</h4>
+    <ul data-role="listview" data-inset="false">
+      <% @session.participations.each do |p| %>
+        <li><%= p.player.name %> (<%= p.role.name %>)</li>
+      <% end %>
+    </ul>
   </div>
 
-  <div>
-    <h4>Date</h4>
-    <p><%= @session.date.strftime("%A, %e %B %Y %l:%M%p") %></p>
-  </div>
-
-  <div>
-    <h4>Stalemate?</h4>
-    <p><%= @session.is_stalemate %></p>
-  </div>
-
-  <div>
+  <div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="b" data-content-theme="d">
     <h4>Comments</h4>
     <p><%= @session.comments %></p>
   </div>
 
-  <div>
-    <h4>Players</h4>
-    <% @session.participations.each do |p| %>
-      <p><%= p.player.name %> (<%= p.role.name %>)</p>
-    <% end %>
-  </div>
 
 </div>
 

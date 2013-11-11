@@ -35,8 +35,11 @@ div {
   }
 }
 
+#notice:empty {
+    display: none;
+}
+
 #notice {
-  color: green;
 }
 
 .field_with_errors {

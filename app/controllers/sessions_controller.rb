@@ -11,6 +11,9 @@ class SessionsController < ApplicationController
   # GET /sessions/1
   # GET /sessions/1.json
   def show
+    if @session.is_stalemate
+      flash.now.notice = "This game was a stalemate."
+    end
   end
 
   # GET /sessions/new
