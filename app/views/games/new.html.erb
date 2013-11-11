@@ -1,5 +1,8 @@
-<h1>New game</h1>
+<div data-role="header">
+  <%= link_to 'Back', :back, "data-icon" => "back", "class" => "ui-btn-left" %>
+  <h3>Game</h3>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', games_path %>
+<div data-role="content">
+  <%= render 'form' %>
+</div>

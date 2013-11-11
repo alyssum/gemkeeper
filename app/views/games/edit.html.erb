@@ -1,6 +1,9 @@
-<h1>Editing game</h1>
+<div data-role="header">
+  <%= link_to 'Delete', @session, method: :delete, data: { confirm: 'Are you sure?' }, "data-icon" => "minus", "class" => "ui-btn-right" %>
+  <%= link_to 'Back', :back, "data-icon" => "back", "class" => "ui-btn-left" %>
+  <h3>Game</h3>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @game %> |
-<%= link_to 'Back', games_path %>
+<div data-role="content">
+  <%= render 'form' %>
+</div>

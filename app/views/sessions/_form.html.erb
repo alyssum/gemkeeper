@@ -12,19 +12,18 @@
   <% end %>
 
   <div class="field" data-role="fieldcontain">
-    <%= f.label :game_id %><br>
     <%= f.select :game_id, options_for_select(@game_options, :selected => @session.game_id) %>
   </div>
   <div class="field">
-    <%= f.label :date %><br>
+    <%= f.label :date %>
     <%= f.text_field :date,  "type" => "datetime-local", "data-clear-btn" => "false", "value" => @session.date.strftime("%Y-%m-%dT%H:%M") %>
   </div>
   <div class="field">
-    <%= f.label :comments %><br>
+    <%= f.label :comments %>
     <%= f.text_area :comments %>
   </div>
   <div class="field">
-    <%= f.label :is_stalemate %><br>
+    <%= f.label :is_stalemate %>
     <%= f.check_box :is_stalemate %>
   </div>
   <div class="actions">
