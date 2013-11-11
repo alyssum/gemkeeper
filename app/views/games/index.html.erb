@@ -1,27 +1,18 @@
-<h1>Listing games</h1>
+<div data-role="header">
+  <%= link_to 'Add', new_game_path, "data-icon" => "plus", "class" => "ui-btn-right" %>
+  <%= link_to 'Refresh', url_for(params), "data-icon" => "refresh", "class" => "ui-btn-left" %>
+  <h3>Games</h3>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<div data-role="content">
+  <ul data-role="listview" data-inset="true">
+  <% @games.each do |game| %>
+      <li data-theme="c">
+      <a href="<%= game_path(game) %>" data-transition="slide">
+        <h2><%= game.name %></h2>
+      </a>
+      </li>
+  <% end %>
+  </ul>
+</div>
 
-  <tbody>
-    <% @games.each do |game| %>
-      <tr>
-        <td><%= game.name %></td>
-        <td><%= link_to 'Show', game %></td>
-        <td><%= link_to 'Edit', edit_game_path(game) %></td>
-        <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Game', new_game_path %>
