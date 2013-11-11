@@ -11,9 +11,9 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field" data-role="fieldcontain">
     <%= f.label :game_id %><br>
-    <%= f.number_field :game_id %>
+    <%= f.select :game_id, options_for_select(@game_options, :selected => @session.game_id) %>
   </div>
   <div class="field">
     <%= f.label :date %><br>

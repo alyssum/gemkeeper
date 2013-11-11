@@ -20,6 +20,7 @@ class SessionsController < ApplicationController
 
   # GET /sessions/1/edit
   def edit
+    @game_options = Game.all.map{ |g| [g.name, g.id] }
   end
 
   # POST /sessions

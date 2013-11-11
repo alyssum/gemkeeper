@@ -1,6 +1,9 @@
-<h1>Editing session</h1>
+<div data-role="header">
+  <%= link_to 'Delete', @session, method: :delete, data: { confirm: 'Are you sure?' }, "data-icon" => "minus", "class" => "ui-btn-right" %>
+  <%= link_to 'Back', :back, "data-icon" => "plus", "class" => "ui-btn-left" %>
+  <h3>Session</h3>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @session %> |
-<%= link_to 'Back', sessions_path %>
+<div data-role="content">
+  <%= render 'form' %>
+</div>
