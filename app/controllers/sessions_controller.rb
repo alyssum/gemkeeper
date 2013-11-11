@@ -19,6 +19,8 @@ class SessionsController < ApplicationController
   # GET /sessions/new
   def new
     @session = Session.new
+    @session.date = DateTime.now
+    @game_options = Game.all.map{ |g| [g.name, g.id] }
   end
 
   # GET /sessions/1/edit
