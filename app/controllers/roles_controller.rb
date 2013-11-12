@@ -30,6 +30,7 @@ class RolesController < ApplicationController
   # POST /roles.json
   def create
     @role = Role.new(role_params)
+    @path = [@game, @role]
 
     respond_to do |format|
       if @role.save
