@@ -1,6 +1,7 @@
 class RolesController < ApplicationController
   before_action :set_role, only: [:show, :edit, :update, :destroy]
-  before_action :set_game, only: [:index, :create, :new]
+  before_action :set_game_from_url, only: [:index, :create, :new]
+  before_action :set_game_from_object, only: [:destroy, :edit, :update]
 
   # GET /roles
   # GET /roles.json
@@ -22,7 +23,6 @@ class RolesController < ApplicationController
 
   # GET /roles/1/edit
   def edit
-    @game = Game.find(@role.game_id)
     @path = @role
   end
 
@@ -47,7 +47,7 @@ class RolesController < ApplicationController
   def update
     respond_to do |format|
       if @role.update(role_params)
-        format.html { redirect_to @role, notice: 'Role was successfully updated.' }
+        format.html { redirect_to @game, notice: 'Role was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -59,7 +59,6 @@ class RolesController < ApplicationController
   # DELETE /roles/1
   # DELETE /roles/1.json
   def destroy
-    @game = Game.find(@role.game_id)
     @role.destroy
     respond_to do |format|
       format.html { redirect_to game_url(@game) }
@@ -73,8 +72,12 @@ class RolesController < ApplicationController
       @role = Role.find(params[:id])
     end
 
-    def set_game
+    def set_game_from_url
       @game = Game.find(params[:game_id])
+    end
+
+    def set_game_from_object
+      @game = Game.find(@role.game_id)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

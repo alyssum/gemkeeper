@@ -11,13 +11,14 @@
     </div>
   <% end %>
 
-  <div class="ui-body">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.hidden_field :game_id %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <ul data-role="listview" data-inset="true">
+    <li class="ui-field-contain">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </li>
+    <li class="ui-body ui-body-b">
+      <%= f.hidden_field :game_id %>
+      <%= f.submit %>
+    </li>
+  </ul>
 <% end %>
