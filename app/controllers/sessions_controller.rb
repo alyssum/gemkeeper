@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   before_action :set_session, only: [:show, :edit, :update, :destroy]
+  before_action :get_options, only: [:new, :edit, :create]
 
   # GET /sessions
   # GET /sessions.json
@@ -20,12 +21,11 @@ class SessionsController < ApplicationController
   def new
     @session = Session.new
     @session.date = DateTime.now
-    @game_options = Game.all.map{ |g| [g.name, g.id] }
+    5.times {@session.participations.build}
   end
 
   # GET /sessions/1/edit
   def edit
-    @game_options = Game.all.map{ |g| [g.name, g.id] }
   end
 
   # POST /sessions
@@ -74,8 +74,14 @@ class SessionsController < ApplicationController
       @session = Session.find(params[:id])
     end
 
+    def get_options
+      @all_games = Game.order(:name)
+      @all_players = Player.order(:name)
+      @game_roles = Role.order(:name)
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def session_params
-      params.require(:session).permit(:game_id, :date, :is_stalemate, :comments)
+      params.require(:session).permit(:game_id, :date, :is_stalemate, :comments, participations_attributes: [:player_id, :role_id, :id])
     end
 end

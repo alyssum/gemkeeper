@@ -11,21 +11,32 @@
     </div>
   <% end %>
 
-  <div class="ui-body" data-role="fieldcontain">
-    <%= f.select :game_id, options_for_select(@game_options, :selected => @session.game_id) %>
-  </div>
   <div class="ui-body">
+    <%= f.select :game_id, options_from_collection_for_select(@all_games, 'id', 'name', @session.game_id), {prompt: 'Select Game'} %>
+    <%= f.label :is_stalemate %>
+    <%= f.check_box :is_stalemate %>
+
+    <%= f.label 'Players & scores' %>
+    <div class="ui-grid-b ui-responsive">
+    <%= f.fields_for :participations do |p| %>
+      <div class="ui-block-a">
+        <%= p.select :player_id, options_from_collection_for_select(@all_players, 'id', 'name', p.object.player_id), {prompt: 'Select Player'} %>
+      </div>
+      <div class="ui-block-b">
+        <%= p.select :role_id, options_from_collection_for_select(@game_roles, 'id', 'name', p.object.role_id), {prompt: 'Select Role'} %>
+      </div>
+      <div class="ui-block-c">
+        <%= p.number_field :score, value: '0' %>
+      </div>
+    <% end %>
+    </div>
+
+    <%= f.label :comments %>
+    <%= f.text_area :comments %>
     <%= f.label :date %>
     <%= f.text_field :date,  "type" => "datetime-local", "data-clear-btn" => "false", "value" => @session.date.strftime("%Y-%m-%dT%H:%M") %>
   </div>
-  <div class="ui-body">
-    <%= f.label :comments %>
-    <%= f.text_area :comments %>
-  </div>
-  <div class="ui-body">
-    <%= f.label :is_stalemate %>
-    <%= f.check_box :is_stalemate %>
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
