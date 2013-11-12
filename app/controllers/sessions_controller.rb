@@ -22,6 +22,7 @@ class SessionsController < ApplicationController
     @session = Session.new
     @session.date = DateTime.now
     5.times {@session.participations.build}
+    @path = [@session, @role]
   end
 
   # GET /sessions/1/edit
@@ -76,8 +77,6 @@ class SessionsController < ApplicationController
 
     def get_options
       @all_games = Game.order(:name)
-      @all_players = Player.order(:name)
-      @game_roles = Role.order(:name)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

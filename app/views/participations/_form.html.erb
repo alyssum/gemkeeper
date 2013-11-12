@@ -1,7 +1,7 @@
-<%= form_for(@participation) do |f| %>
+<%= form_for(@path) do |f| %>
   <% if @participation.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@participation.errors.count, "error") %> prohibited this participation from being saved:</h2>
+    <div id="error" class="ui-bar-b ui-bar ui-corner-all">
+      <p><%= pluralize(@participation.errors.count, "error") %> prohibited this participation from being saved:</p>
 
       <ul>
       <% @participation.errors.full_messages.each do |msg| %>
@@ -10,24 +10,23 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :session_id %><br>
-    <%= f.number_field :session_id %>
-  </div>
-  <div class="field">
-    <%= f.label :player_id %><br>
-    <%= f.number_field :player_id %>
-  </div>
-  <div class="field">
-    <%= f.label :role_id %><br>
-    <%= f.number_field :role_id %>
-  </div>
-  <div class="field">
-    <%= f.label :score %><br>
-    <%= f.number_field :score %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  
+  <ul data-role="listview" data-inset="true">
+    <li class="ui-field-contain">
+      <%= f.label :player_id %>
+      <%= f.select :player_id, options_from_collection_for_select(@all_players, 'id', 'name', @participation.player_id), {prompt: 'Select Player'} %>
+    </li>
+    <li class="ui-field-contain">
+      <%= f.label :role_id %>
+      <%= f.select :role_id, options_from_collection_for_select(@game_roles, 'id', 'name', @participation.role_id), {prompt: 'Select Role'} %>
+    </li>
+    <li class="ui-field-contain">
+      <%= f.label :score %>
+      <%= f.number_field :score, value: '0' %>
+    </li>
+    <li class="ui-body ui-body-b">
+      <%= f.hidden_field :session_id %>
+      <%= f.submit %>
+    </li>
+  </ul>
 <% end %>
