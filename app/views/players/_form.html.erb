@@ -11,15 +11,17 @@
     </div>
   <% end %>
 
-  <div class="ui-body">
-    <%= f.label :name %>
-    <%= f.text_field :name, "data-clear-btn" => "true" %>
-  </div>
-  <div class="ui-body">
-    <%= f.label :email %>
-    <%= f.text_field :email, "type" => "email", "data-clear-btn" => "true" %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <ul data-role="listview" data-inset="true">
+    <li class="ui-field-contain">
+      <%= f.label :name %>
+      <%= f.text_field :name, "data-clear-btn" => "true" %>
+    </li>
+    <li class="ui-field-contain">
+      <%= f.label :email %>
+      <%= f.text_field :email, "type" => "email", "data-clear-btn" => "true" %>
+    </li>
+    <li class="ui-body ui-body-b">
+      <%= f.submit %>
+    </li>
+  </ul>
 <% end %>
