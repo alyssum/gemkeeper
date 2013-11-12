@@ -22,8 +22,8 @@
     </div>
   </div>
 
-  <table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive"
-    data-column-btn-theme="b" data-column-popup-theme="a">
+  <table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-body-a ui-shadow table-stripe ui-responsive"
+    data-column-btn-theme="a" data-column-popup-theme="a">
     <thead>
       <tr class="ui-bar-d">
         <th data-priority="5">Rank</th>
@@ -43,5 +43,19 @@
       <% end %>  
     </tbody>
   </table>
+
+  <div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+    <h4>Roles</h4>
+    <ul data-role="listview" data-inset="false">
+      <% @game.roles.each do |r| %>
+        <li><%= r.name %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+    <h4>Metadata</h4>
+    <p><strong>Max Players:</strong> <%= @game.max_players %></p>
+  </div>
 
 </div>
