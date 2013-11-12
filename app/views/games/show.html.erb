@@ -18,10 +18,11 @@
     </div>
     <div class="ui-block-c" style="text-align: center">
       <h4>Overall Stalemate Ratio</h4> 
-      <h4><%= @stalemate_ratio %>%</h4>
+      <h4><%= @stalemate_ratio.round(1) %>%</h4>
     </div>
   </div>
 
+  <!--
   <table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-body-a ui-shadow table-stripe ui-responsive"
     data-column-btn-theme="a" data-column-popup-theme="a">
     <thead>
@@ -43,19 +44,28 @@
       <% end %>  
     </tbody>
   </table>
+  -->
 
-  <div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-    <h4>Roles</h4>
+  <div data-role="collapsible" data-collapsed="true" data-theme="a" data-content-theme="a">
+    <h4>Metadata</h4>
     <ul data-role="listview" data-inset="false">
-      <% @game.roles.each do |r| %>
-        <li><%= r.name %></li>
-      <% end %>
+      <li><strong>Max Players:</strong> <%= @game.max_players %></li>
     </ul>
   </div>
 
-  <div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-    <h4>Metadata</h4>
-    <p><strong>Max Players:</strong> <%= @game.max_players %></p>
+  <div data-role="collapsible" data-collapsed="false" data-theme="a" data-content-theme="a">
+    <h4>Roles</h4>
+    <ul data-role="listview" data-inset="true">
+      <% @game.roles.each do |role| %>
+      <li data-icon="edit">
+        <%= link_to role.name, edit_role_path(role) %>
+      </li>
+      <% end %>
+      <li data-icon="plus" data-theme="b">
+        <%= link_to 'Add New Role', new_game_role_path(@game) %>
+      </li>
+    </ul>
   </div>
+
 
 </div>

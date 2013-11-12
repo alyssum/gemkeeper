@@ -1,7 +1,7 @@
-<%= form_for(@role) do |f| %>
+<%= form_for( @path ) do |f| %>
   <% if @role.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@role.errors.count, "error") %> prohibited this role from being saved:</h2>
+    <div id="error" class="ui-bar-b ui-bar ui-corner-all">
+      <p><%= pluralize(@role.errors.count, "error") %> prohibited this role from being saved:</p>
 
       <ul>
       <% @role.errors.full_messages.each do |msg| %>
@@ -11,14 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
+  <div class="ui-body">
+    <%= f.label :name %>
     <%= f.text_field :name %>
+    <%= f.hidden_field :game_id %>
   </div>
-  <div class="field">
-    <%= f.label :game_id %><br>
-    <%= f.number_field :game_id %>
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

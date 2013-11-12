@@ -1,5 +1,6 @@
 class RolesController < ApplicationController
   before_action :set_role, only: [:show, :edit, :update, :destroy]
+  before_action :set_game, only: [:index, :create, :new]
 
   # GET /roles
   # GET /roles.json
@@ -15,10 +16,14 @@ class RolesController < ApplicationController
   # GET /roles/new
   def new
     @role = Role.new
+    @role.game_id = @game.id 
+    @path = [@game, @role]
   end
 
   # GET /roles/1/edit
   def edit
+    @game = Game.find(@role.game_id)
+    @path = @role
   end
 
   # POST /roles
@@ -28,7 +33,7 @@ class RolesController < ApplicationController
 
     respond_to do |format|
       if @role.save
-        format.html { redirect_to @role, notice: 'Role was successfully created.' }
+        format.html { redirect_to game_url(@game), notice: 'Role was successfully created.' }
         format.json { render action: 'show', status: :created, location: @role }
       else
         format.html { render action: 'new' }
@@ -54,9 +59,10 @@ class RolesController < ApplicationController
   # DELETE /roles/1
   # DELETE /roles/1.json
   def destroy
+    @game = Game.find(@role.game_id)
     @role.destroy
     respond_to do |format|
-      format.html { redirect_to roles_url }
+      format.html { redirect_to game_url(@game) }
       format.json { head :no_content }
     end
   end
@@ -65,6 +71,10 @@ class RolesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_role
       @role = Role.find(params[:id])
+    end
+
+    def set_game
+      @game = Game.find(params[:game_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
