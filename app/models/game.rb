@@ -3,7 +3,7 @@ class Game < ActiveRecord::Base
   has_many :participations, through: :sessions
   has_many :players, through: :participations
   has_many :roles
-  accepts_nested_attributes_for :roles
+  accepts_nested_attributes_for :roles, allow_destroy: true
 
   validates :name, presence: true
   validates :max_players, numericality: { greater_than: 0 }
