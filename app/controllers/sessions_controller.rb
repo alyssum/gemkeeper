@@ -21,7 +21,6 @@ class SessionsController < ApplicationController
   def new
     @session = Session.new
     @session.date = DateTime.now
-    5.times {@session.participations.build}
     @path = [@session, @role]
   end
 

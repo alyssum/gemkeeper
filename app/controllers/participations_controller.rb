@@ -17,11 +17,14 @@ class ParticipationsController < ApplicationController
 
   # GET /participations/new
   def new
-    @game_roles = @game_roles - @session.roles
+    @game_roles = @game_roles 
     @all_players = @all_players - @session.players
 
     @participation = Participation.new
     @participation.session_id = @session.id
+    @participation.role_id = @game_roles.first.id if @game_roles.length == 1
+    @participation.player_id = @all_players.first.id if @all_players.length == 1
+
     @path = [@session, @participation]
   end
 
