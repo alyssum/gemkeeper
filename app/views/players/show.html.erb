@@ -2,6 +2,7 @@
   <%= link_to 'Edit', edit_player_path(@player), "data-icon" => "edit", "class" => "ui-btn-right" %>
   <%= link_to 'Back', players_path, "data-icon" => "back", "class" => "ui-btn-left" %>
   <h3><%= @player.name %></h3>
+  <%= render 'navbar' %>
 </div>
 
 <div data-role="content">

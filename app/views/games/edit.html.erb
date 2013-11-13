@@ -2,6 +2,7 @@
   <%= link_to 'Delete', @game, method: :delete, data: { confirm: 'Are you sure?' }, "data-icon" => "minus", "class" => "ui-btn-right" %>
   <%= link_to 'Back', game_path(@game), "data-icon" => "back", "class" => "ui-btn-left" %>
   <h3>Game</h3>
+  <%= render 'navbar' %>
 </div>
 
 <div data-role="content">

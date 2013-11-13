@@ -2,6 +2,7 @@
   <%= link_to 'Add', new_game_role_path(@game), "data-icon" => "plus", "class" => "ui-btn-right" %>
   <%= link_to @game.name, game_path(@game), "data-icon" => "back", "class" => "ui-btn-left" %>
   <h3><%= @game.name %> Roles</h3>
+  <%= render 'games/navbar' %>
 </div>
 
 <div data-role="content">
