@@ -1,11 +1,17 @@
 Gemkeeper::Application.routes.draw do
-  get "main/index"
-
+  devise_for :users, :skip => [:sessions]
+  as :user do
+    get 'login' => 'devise/sessions#new', :as => :new_user_session
+    post 'login' => 'devise/sessions#create', :as => :user_session 
+    #TODO: change this to delete later
+    get 'logout' => 'devise/sessions#destroy', :as => :destroy_user_session
+  end
+    
   resources :games, shallow: true do
     resources :roles
   end
 
-  resources :sessions, shallow: true do
+  resources :sessions, shallow: true, :as => :game_sessions do
     resources :participations
   end
 

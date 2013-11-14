@@ -48,6 +48,9 @@ end
 # Dump database contents to a seed file
 gem "seed_dump", "~> 2.0.0"
 
+# User authentication
+gem 'devise'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

@@ -1,5 +1,5 @@
 <div data-role="header">
-  <%= link_to 'Add', new_session_path, "data-icon" => "plus", "class" => "ui-btn-right" %>
+  <%= link_to 'Add', new_game_session_path, "data-icon" => "plus", "class" => "ui-btn-right" %>
   <%= link_to 'Refresh', url_for(params), "data-icon" => "refresh", "class" => "ui-btn-left" %>
   <h3>Gêmkeeper</h3>
   <%= render 'navbar' %>
@@ -11,7 +11,7 @@
     <li data-role="list-divider"><%= session_date.strftime("%A, %e %B %Y") %><span class="ui-li-count"><%= sessions.count %></span></li>
     <% sessions.each do |session| %>
       <li data-theme="c">
-      <a href="<%= session_path(session) %>" data-transition="slide">
+      <a href="<%= game_session_path(session) %>" data-transition="slide">
         <p class="ui-li-aside"><strong><%= session.date.strftime("%l:%M%p") %></strong></p>
         <h2><%= session.game.name %></h2>
         <p>"<%= session.comments %>"</p>
@@ -21,5 +21,6 @@
     <% end %>
   <% end %>
   </ul>
+
 </div>
 

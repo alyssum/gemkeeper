@@ -1,4 +1,3 @@
-<%= form_for(@session) do |f| %>
   <% if @session.errors.any? %>
     <div id="error" class="ui-bar-b ui-bar ui-corner-all">
       <p><%= pluralize(@session.errors.count, "error") %> prohibited this session from being saved:</p>
@@ -33,4 +32,3 @@
     </li>
   </ul>
 
-<% end %>

@@ -5,5 +5,7 @@
 </div>
 
 <div data-role="content">
-  <%= render 'form' %>
+  <%= form_for(@session, :url => game_sessions_path) do |f| %>
+    <%= render 'form', :f => f %>
+  <% end %>
 </div>

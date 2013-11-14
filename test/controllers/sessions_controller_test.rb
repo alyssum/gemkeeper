@@ -3,6 +3,7 @@ require 'test_helper'
 class SessionsControllerTest < ActionController::TestCase
   setup do
     @session = sessions(:one)
+    sign_in users(:one)
   end
 
   test "should get index" do
@@ -21,7 +22,7 @@ class SessionsControllerTest < ActionController::TestCase
       post :create, session: { comments: @session.comments, is_stalemate: @session.is_stalemate, date: @session.date, game_id: @session.game_id }
     end
 
-    assert_redirected_to session_path(assigns(:session))
+    assert_redirected_to game_session_path(assigns(:session))
   end
 
   test "should show session" do
@@ -36,7 +37,7 @@ class SessionsControllerTest < ActionController::TestCase
 
   test "should update session" do
     patch :update, id: @session, session: { comments: @session.comments, is_stalemate: @session.is_stalemate, date: @session.date, game_id: @session.game_id }
-    assert_redirected_to session_path(assigns(:session))
+    assert_redirected_to game_session_path(assigns(:session))
   end
 
   test "should destroy session" do
@@ -44,6 +45,6 @@ class SessionsControllerTest < ActionController::TestCase
       delete :destroy, id: @session
     end
 
-    assert_redirected_to sessions_path
+    assert_redirected_to game_sessions_path
   end
 end

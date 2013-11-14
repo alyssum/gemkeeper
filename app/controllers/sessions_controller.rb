@@ -35,7 +35,7 @@ class SessionsController < ApplicationController
 
     respond_to do |format|
       if @session.save
-        format.html { redirect_to @session, notice: 'Session was successfully created.' }
+        format.html { redirect_to game_session_path(@session), notice: 'Session was successfully created.' }
         format.json { render action: 'show', status: :created, location: @session }
       else
         format.html { render action: 'new' }
@@ -49,7 +49,7 @@ class SessionsController < ApplicationController
   def update
     respond_to do |format|
       if @session.update(session_params)
-        format.html { redirect_to @session, notice: 'Session was successfully updated.' }
+        format.html { redirect_to game_session_path(@session), notice: 'Session was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -63,7 +63,7 @@ class SessionsController < ApplicationController
   def destroy
     @session.destroy
     respond_to do |format|
-      format.html { redirect_to sessions_url }
+      format.html { redirect_to game_sessions_url }
       format.json { head :no_content }
     end
   end

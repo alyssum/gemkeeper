@@ -1,6 +1,6 @@
 <div data-role="header">
-  <%= link_to 'Edit', edit_session_path(@session), "data-icon" => "edit", "class" => "ui-btn-right" %>
-  <%= link_to 'Back', sessions_path, "data-icon" => "back", "class" => "ui-btn-left" %>
+  <%= link_to 'Edit', edit_game_session_path(@session), "data-icon" => "edit", "class" => "ui-btn-right" %>
+  <%= link_to 'Back', game_sessions_path, "data-icon" => "back", "class" => "ui-btn-left" %>
   <h3>Session</h3>
   <%= render 'navbar' %>
 </div>
@@ -23,7 +23,7 @@
       </li>
       <% end %>
       <li data-icon="plus" data-theme="b">
-        <%= link_to 'Add New Participant', new_session_participation_path(@session) %>
+        <%= link_to 'Add New Participant', new_game_session_participation_path(@session) %>
       </li>
     </ul>
   </div>
