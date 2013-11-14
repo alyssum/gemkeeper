@@ -2,7 +2,7 @@ class Game < ActiveRecord::Base
   has_many :sessions
   has_many :participations, through: :sessions
   has_many :players, through: :participations
-  has_many :roles, :dependent => :delete_all
+  has_many :roles, :dependent => :delete_all, :order => "name"
 
   validates :name, presence: true
   validates :max_players, numericality: { greater_than: 0 }

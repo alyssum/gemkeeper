@@ -1,14 +1,17 @@
-<p id="notice"><%= notice %></p>
+<div data-role="header">
+  <%= link_to 'Edit', edit_role_path(@role), "data-icon" => "edit", "class" => "ui-btn-right" %>
+  <%= link_to 'Back', roles_path, "data-icon" => "back", "class" => "ui-btn-left" %>
+  <h3><%= @role.name %></h3>
+  <%= render 'games/navbar' %>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @role.name %>
-</p>
+<div data-role="content">
+  <p id="notice" class="ui-bar-a ui-bar ui-corner-all" ><%= notice %></p>
 
-<p>
-  <strong>Game:</strong>
-  <%= @role.game_id %>
-</p>
+  <h4>Name:</h4>
+  <p><%= @role.name %></p>
 
-<%= link_to 'Edit', edit_role_path(@role) %> |
-<%= link_to 'Back', roles_path %>
+  <h4>Game:</h4>
+  <p><%= @role.game_id %></p>
+
+</div>
