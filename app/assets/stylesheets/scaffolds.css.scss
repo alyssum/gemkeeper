@@ -34,15 +34,16 @@ div {
   }
 }
 
+#alert:empty {
+    display: none;
+}
+
 #error:empty {
     display: none;
 }
 
 #notice:empty {
     display: none;
-}
-
-#notice {
 }
 
 .field_with_errors {

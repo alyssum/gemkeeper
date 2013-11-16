@@ -3,8 +3,12 @@
 </div>
 
 <div data-role="content">
+  <p id="notice" class="ui-bar-a ui-bar ui-corner-all" ><%= notice %></p>
+  <p id="alert" class="ui-bar-a ui-bar ui-corner-all" ><%= alert %></p>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), html: {data: {ajax: false}}) do |f| %>
+  <%= devise_error_messages! %>
+
   <ul data-role="listview" data-inset="true">
     <li class="ui-field-contain">
       <%= f.label :email %>
@@ -20,8 +24,15 @@
       <% end -%>
     </li>
     <li class="ui-body ui-body-b">
-      <%= f.submit "Sign in" %>
+      <%= f.submit "Log In" %>
+    </li>
+    <li class="ui-body ui-body-a">
+      <div class="ui-grid-a ui-responsive">
+        <div class="ui-block-a"><%= link_to 'Forgot Password', new_password_path(resource_name),  class: "ui-btn ui-corner-all ui-shadow" %></div>
+        <div class="ui-block-b"><%= link_to 'Register', new_registration_path(resource_name),  class: "ui-btn ui-corner-all ui-shadow" %></div>
+      </div>
     </li>
   </ul>
 <% end %>
+
 </div>

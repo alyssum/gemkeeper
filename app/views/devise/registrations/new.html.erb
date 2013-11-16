@@ -1,4 +1,5 @@
 <div data-role="header">
+  <%= link_to 'Back', new_session_path(resource_name), "data-icon" => "back", "class" => "ui-btn-left" %>
   <h3>Gêmkeeper</h3>
 </div>
 
@@ -21,7 +22,7 @@
       <%= f.password_field :password_confirmation %>
     </li>
     <li class="ui-body ui-body-b">
-      <%= f.submit "Sign up" %>
+      <%= f.submit "Register" %>
     </li>
   </ul>
 
