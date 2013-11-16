@@ -6,34 +6,33 @@
 
 <div data-role="content">
 
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
 
   <ul data-role="listview" data-inset="true">
     <li class="ui-field-contain">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, :autofocus => true %></div>
+      <%= f.label :email %>
+      <%= f.email_field :email, :autofocus => true %>
     </li>
     <li class="ui-field-contain">
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
 
-      <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-      <%= f.password_field :password, :autocomplete => "off" %></div>
+      <%= f.label :password %> 
+      <%= f.password_field :password, :autocomplete => "off" %>
     </li>
     <li class="ui-field-contain">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation %></div>
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
     </li>
     <li class="ui-field-contain">
-      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-      <%= f.password_field :current_password %></div>
+      <%= f.label :current_password %> 
+      <%= f.password_field :current_password %>
     </li>
     <li class="ui-body ui-body-b">
-      <%= f.submit "Update" %></div>
+      <%= f.submit "Update" %>
     </li>
   </ul>
 <% end %>
