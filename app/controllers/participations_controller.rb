@@ -26,11 +26,13 @@ class ParticipationsController < ApplicationController
     @participation.player_id = @all_players.first.id if @all_players.length == 1
 
     @path = [@session, @participation]
+    @url = game_session_participations_path(@session)
   end
 
   # GET /participations/1/edit
   def edit
     @path = @participation
+    @url = participation_path(@participation)
   end
 
   # POST /participations
@@ -41,7 +43,7 @@ class ParticipationsController < ApplicationController
 
     respond_to do |format|
       if @participation.save
-        format.html { redirect_to session_url(@session), notice: 'Participation was successfully created.' }
+        format.html { redirect_to game_session_path(@session), notice: 'Participation was successfully created.' }
         format.json { render action: 'show', status: :created, location: @participation }
       else
         format.html { render action: 'new' }
@@ -55,7 +57,7 @@ class ParticipationsController < ApplicationController
   def update
     respond_to do |format|
       if @participation.update(participation_params)
-        format.html { redirect_to @session, notice: 'Participation was successfully updated.' }
+        format.html { redirect_to game_session_path(@session), notice: 'Participation was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -81,7 +83,7 @@ class ParticipationsController < ApplicationController
     end
 
     def set_session_from_url
-      @session = Session.find(params[:session_id])
+      @session = Session.find(params[:game_session_id])
     end
 
     def set_session_from_object
