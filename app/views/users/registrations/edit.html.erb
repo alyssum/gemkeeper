@@ -11,6 +11,7 @@
   <%= devise_error_messages! %>
 
   <ul data-role="listview" data-inset="true">
+    <!-- TODO: This should update the player's email as well -->
     <li class="ui-field-contain">
       <%= f.label :email %>
       <%= f.email_field :email, :autofocus => true %>

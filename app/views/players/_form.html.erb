@@ -18,7 +18,11 @@
     </li>
     <li class="ui-field-contain">
       <%= f.label :email %>
-      <%= f.text_field :email, "type" => "email", "data-clear-btn" => "true" %>
+      <% if f.object.new_record? %>
+        <%= f.email_field :email, "type" => "email" %>
+      <% else %>
+        <%= f.email_field :email, "type" => "email", "disabled" => "disabled" %>
+      <% end %>
     </li>
     <li class="ui-body ui-body-b">
       <%= f.submit %>

@@ -3,60 +3,60 @@
 # Do not hesitate to tweak this to your needs
 
 Game.create!([
-  { :name => "Pandemic", :created_at => "2013-11-11 16:50:14", :updated_at => "2013-11-13 11:31:29", :max_players => 4 },
-  { :name => "Ticket to Ride", :created_at => "2013-11-12 18:35:46", :updated_at => "2013-11-12 18:35:46", :max_players => 5 }
+  { :name => "Pandemic", :created_at => "2013-11-12 00:50:14", :updated_at => "2013-11-13 19:31:29", :max_players => 4 },
+  { :name => "Ticket to Ride", :created_at => "2013-11-13 02:35:46", :updated_at => "2013-11-13 02:35:46", :max_players => 5 }
 ])
 
 
 
 Participation.create!([
-  { :session_id => 1, :player_id => 1, :role_id => 12, :score => 0, :created_at => "2013-11-11 16:51:39", :updated_at => "2013-11-13 07:48:43" },
-  { :session_id => 1, :player_id => 2, :role_id => 2, :score => 0, :created_at => "2013-11-11 16:51:49", :updated_at => "2013-11-11 16:51:49" },
-  { :session_id => 2, :player_id => 3, :role_id => 3, :score => 0, :created_at => "2013-11-11 16:52:34", :updated_at => "2013-11-11 16:52:34" },
-  { :session_id => 2, :player_id => 4, :role_id => 4, :score => 0, :created_at => "2013-11-11 16:52:45", :updated_at => "2013-11-11 16:52:45" },
-  { :session_id => 3, :player_id => 1, :role_id => 2, :score => 0, :created_at => "2013-11-11 17:13:53", :updated_at => "2013-11-11 17:13:53" },
-  { :session_id => 3, :player_id => 3, :role_id => 4, :score => 0, :created_at => "2013-11-11 17:14:07", :updated_at => "2013-11-11 17:14:07" }
+  { :session_id => 1, :player_id => 1, :role_id => 12, :score => 0, :created_at => "2013-11-12 00:51:39", :updated_at => "2013-11-13 15:48:43" },
+  { :session_id => 1, :player_id => 2, :role_id => 2, :score => 0, :created_at => "2013-11-12 00:51:49", :updated_at => "2013-11-12 00:51:49" },
+  { :session_id => 2, :player_id => 3, :role_id => 3, :score => 0, :created_at => "2013-11-12 00:52:34", :updated_at => "2013-11-12 00:52:34" },
+  { :session_id => 2, :player_id => 4, :role_id => 4, :score => 0, :created_at => "2013-11-12 00:52:45", :updated_at => "2013-11-12 00:52:45" },
+  { :session_id => 3, :player_id => 1, :role_id => 2, :score => 0, :created_at => "2013-11-12 01:13:53", :updated_at => "2013-11-12 01:13:53" },
+  { :session_id => 3, :player_id => 3, :role_id => 4, :score => 0, :created_at => "2013-11-12 01:14:07", :updated_at => "2013-11-12 01:14:07" }
 ])
 
 
 
 Player.create!([
-  { :name => "Alissa", :email => "", :created_at => "2013-11-11 16:50:27", :updated_at => "2013-11-11 16:50:27" },
-  { :name => "Diana", :email => "", :created_at => "2013-11-11 16:50:32", :updated_at => "2013-11-11 16:50:32" },
-  { :name => "Felix", :email => "", :created_at => "2013-11-11 16:50:38", :updated_at => "2013-11-11 16:50:38" },
-  { :name => "Sean", :email => "", :created_at => "2013-11-11 16:50:43", :updated_at => "2013-11-11 16:50:43" }
+  { :name => "Alissa", :email => "alissa.m.harrison@gmail.com", :created_at => "2013-11-12 00:50:27", :updated_at => "2013-11-12 00:50:27" },
+  { :name => "Diana", :email => "diana@gemkeeper.com", :created_at => "2013-11-12 00:50:32", :updated_at => "2013-11-12 00:50:32" },
+  { :name => "Felix", :email => "felix@gemkeeper.com", :created_at => "2013-11-12 00:50:38", :updated_at => "2013-11-12 00:50:38" },
+  { :name => "Sean", :email => "sean@gemkeeper.com", :created_at => "2013-11-12 00:50:43", :updated_at => "2013-11-12 00:50:43" }
 ])
 
 
 
 Role.create!([
-  { :name => "Medic", :game_id => 1, :created_at => "2013-11-11 16:51:01", :updated_at => "2013-11-13 21:36:12" },
-  { :name => "Field Director", :game_id => 1, :created_at => "2013-11-11 16:51:08", :updated_at => "2013-11-11 16:51:08" },
-  { :name => "Researcher", :game_id => 1, :created_at => "2013-11-11 16:51:15", :updated_at => "2013-11-11 16:51:15" },
-  { :name => "Scientist", :game_id => 1, :created_at => "2013-11-11 19:58:24", :updated_at => "2013-11-11 19:58:24" },
-  { :name => "Virologist", :game_id => 1, :created_at => "2013-11-11 20:33:50", :updated_at => "2013-11-13 21:51:54" },
-  { :name => "Troubleshooter", :game_id => 1, :created_at => "2013-11-13 21:51:19", :updated_at => "2013-11-13 21:52:02" },
-  { :name => "Epidemiologist", :game_id => 1, :created_at => "2013-11-13 21:51:54", :updated_at => "2013-11-13 21:51:54" },
-  { :name => "Pilot", :game_id => 1, :created_at => "2013-11-13 22:10:05", :updated_at => "2013-11-13 22:10:05" },
-  { :name => "Field Operative", :game_id => 1, :created_at => "2013-11-13 22:10:05", :updated_at => "2013-11-13 22:10:05" },
-  { :name => "Pilot", :game_id => 1, :created_at => "2013-11-13 22:15:20", :updated_at => "2013-11-13 22:15:20" },
-  { :name => "Dispatcher", :game_id => 1, :created_at => "2013-11-13 22:15:20", :updated_at => "2013-11-13 22:15:20" },
-  { :name => "Operations Expert", :game_id => 1, :created_at => "2013-11-13 22:15:20", :updated_at => "2013-11-13 22:15:20" },
-  { :name => "Containment Specialist", :game_id => 1, :created_at => "2013-11-13 22:15:20", :updated_at => "2013-11-13 22:15:20" },
-  { :name => "Generalist", :game_id => 1, :created_at => "2013-11-13 22:15:20", :updated_at => "2013-11-13 22:15:20" },
-  { :name => "Archivist", :game_id => 1, :created_at => "2013-11-13 22:15:20", :updated_at => "2013-11-13 22:15:20" },
-  { :name => "Contingency Planner", :game_id => 1, :created_at => "2013-11-13 22:15:20", :updated_at => "2013-11-13 22:15:20" },
-  { :name => "Local Liaision", :game_id => 1, :created_at => "2013-11-13 22:15:20", :updated_at => "2013-11-13 22:15:20" },
-  { :name => "Conductor", :game_id => 2, :created_at => "2013-11-12 18:35:46", :updated_at => "2013-11-12 18:35:46" }
+  { :name => "Medic", :game_id => 1, :created_at => "2013-11-12 00:51:01", :updated_at => "2013-11-14 05:36:12" },
+  { :name => "Field Director", :game_id => 1, :created_at => "2013-11-12 00:51:08", :updated_at => "2013-11-12 00:51:08" },
+  { :name => "Researcher", :game_id => 1, :created_at => "2013-11-12 00:51:15", :updated_at => "2013-11-12 00:51:15" },
+  { :name => "Scientist", :game_id => 1, :created_at => "2013-11-12 03:58:24", :updated_at => "2013-11-12 03:58:24" },
+  { :name => "Virologist", :game_id => 1, :created_at => "2013-11-12 04:33:50", :updated_at => "2013-11-14 05:51:54" },
+  { :name => "Troubleshooter", :game_id => 1, :created_at => "2013-11-14 05:51:19", :updated_at => "2013-11-14 05:52:02" },
+  { :name => "Epidemiologist", :game_id => 1, :created_at => "2013-11-14 05:51:54", :updated_at => "2013-11-14 05:51:54" },
+  { :name => "Pilot", :game_id => 1, :created_at => "2013-11-14 06:10:05", :updated_at => "2013-11-14 06:10:05" },
+  { :name => "Field Operative", :game_id => 1, :created_at => "2013-11-14 06:10:05", :updated_at => "2013-11-14 06:10:05" },
+  { :name => "Pilot", :game_id => 1, :created_at => "2013-11-14 06:15:20", :updated_at => "2013-11-14 06:15:20" },
+  { :name => "Dispatcher", :game_id => 1, :created_at => "2013-11-14 06:15:20", :updated_at => "2013-11-14 06:15:20" },
+  { :name => "Operations Expert", :game_id => 1, :created_at => "2013-11-14 06:15:20", :updated_at => "2013-11-14 06:15:20" },
+  { :name => "Containment Specialist", :game_id => 1, :created_at => "2013-11-14 06:15:20", :updated_at => "2013-11-14 06:15:20" },
+  { :name => "Generalist", :game_id => 1, :created_at => "2013-11-14 06:15:20", :updated_at => "2013-11-14 06:15:20" },
+  { :name => "Archivist", :game_id => 1, :created_at => "2013-11-14 06:15:20", :updated_at => "2013-11-14 06:15:20" },
+  { :name => "Contingency Planner", :game_id => 1, :created_at => "2013-11-14 06:15:20", :updated_at => "2013-11-14 06:15:20" },
+  { :name => "Local Liaision", :game_id => 1, :created_at => "2013-11-14 06:15:20", :updated_at => "2013-11-14 06:15:20" },
+  { :name => "Conductor", :game_id => 2, :created_at => "2013-11-13 02:35:46", :updated_at => "2013-11-13 02:35:46" }
 ])
 
 
 
 Session.create!([
-  { :game_id => 1, :date => "2013-11-11 16:51:00", :comments => "Close but we won", :created_at => "2013-11-11 16:51:27", :updated_at => "2013-11-13 07:48:43", :is_stalemate => false },
-  { :game_id => 1, :date => "2013-11-10 16:51:00", :comments => "Epic failure", :created_at => "2013-11-11 16:51:59", :updated_at => "2013-11-11 18:41:12", :is_stalemate => true },
-  { :game_id => 1, :date => "2013-11-08 17:13:00", :comments => "Lost again", :created_at => "2013-11-11 17:13:36", :updated_at => "2013-11-11 18:42:24", :is_stalemate => true },
-  { :game_id => 1, :date => "2013-11-05 16:46:00", :comments => "Umm, more ghost games.", :created_at => "2013-11-12 16:46:51", :updated_at => "2013-11-12 16:46:51", :is_stalemate => false }
+  { :game_id => 1, :date => "2013-11-12 00:51:00", :comments => "Close but we won", :created_at => "2013-11-12 00:51:27", :updated_at => "2013-11-13 15:48:43", :is_stalemate => false },
+  { :game_id => 1, :date => "2013-11-11 00:51:00", :comments => "Epic failure", :created_at => "2013-11-12 00:51:59", :updated_at => "2013-11-12 02:41:12", :is_stalemate => true },
+  { :game_id => 1, :date => "2013-11-09 01:13:00", :comments => "Lost again", :created_at => "2013-11-12 01:13:36", :updated_at => "2013-11-12 02:42:24", :is_stalemate => true },
+  { :game_id => 1, :date => "2013-11-06 00:46:00", :comments => "Umm, more ghost games.", :created_at => "2013-11-13 00:46:51", :updated_at => "2013-11-13 00:46:51", :is_stalemate => false }
 ])
 
 

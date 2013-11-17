@@ -49,7 +49,7 @@ end
 gem "seed_dump", "~> 2.0.0"
 
 # User authentication
-gem 'devise'
+gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
