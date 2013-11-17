@@ -3,30 +3,20 @@ require 'test_helper'
 class RolesControllerTest < ActionController::TestCase
   setup do
     @role = roles(:one)
-  end
-
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:roles)
+    sign_in users(:one)
   end
 
   test "should get new" do
-    get :new
+    get :new, game_id: @role.game_id
     assert_response :success
   end
 
   test "should create role" do
     assert_difference('Role.count') do
-      post :create, role: { game_id: @role.game_id, name: @role.name }
+      post :create, game_id: @role.game_id, role: { game_id: @role.game_id, name: @role.name }
     end
 
-    assert_redirected_to role_path(assigns(:role))
-  end
-
-  test "should show role" do
-    get :show, id: @role
-    assert_response :success
+    assert_redirected_to game_path(:id => @role.game_id)
   end
 
   test "should get edit" do
@@ -36,7 +26,7 @@ class RolesControllerTest < ActionController::TestCase
 
   test "should update role" do
     patch :update, id: @role, role: { game_id: @role.game_id, name: @role.name }
-    assert_redirected_to role_path(assigns(:role))
+    assert_redirected_to game_path(:id => @role.game_id)
   end
 
   test "should destroy role" do
@@ -44,6 +34,6 @@ class RolesControllerTest < ActionController::TestCase
       delete :destroy, id: @role
     end
 
-    assert_redirected_to roles_path
+    assert_redirected_to game_path(:id => @role.game_id)
   end
 end

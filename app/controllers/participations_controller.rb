@@ -4,17 +4,6 @@ class ParticipationsController < ApplicationController
   before_action :set_session_from_object, only: [:destroy, :edit, :update]
   before_action :get_options, only: [:new, :edit, :create]
 
-  # GET /participations
-  # GET /participations.json
-  def index
-    @participations = Participation.all
-  end
-
-  # GET /participations/1
-  # GET /participations/1.json
-  def show
-  end
-
   # GET /participations/new
   def new
     @game_roles = @game_roles 
@@ -71,7 +60,7 @@ class ParticipationsController < ApplicationController
   def destroy
     @participation.destroy
     respond_to do |format|
-      format.html { redirect_to session_url(@session) }
+      format.html { redirect_to game_session_path(@session) }
       format.json { head :no_content }
     end
   end

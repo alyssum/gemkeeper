@@ -7,11 +7,11 @@ Gemkeeper::Application.routes.draw do
 
     
   resources :games, shallow: true do
-    resources :roles
+    resources :roles, except: [:show, :index]
   end
 
   resources :sessions, shallow: true, :as => :game_sessions do
-    resources :participations
+    resources :participations, except: [:show, :index]
   end
 
   resources :players

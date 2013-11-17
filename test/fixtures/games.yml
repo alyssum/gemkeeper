@@ -1,7 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  id: 1
+  name: Pandemic
+  max_players: 4
 
 two:
-  name: MyString
+  id: 2
+  name: Descent
+  max_players: 5
