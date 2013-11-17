@@ -1,0 +1,9 @@
+<div data-role="navbar">
+  <ul>
+    <li><%= link_to 'Sessions', game_sessions_path, class: (is_sessions_section? ? 'ui-btn-active ui-state-persist' : '')  %></li>
+    <li><%= link_to 'Games', games_path, class: (is_games_section? ? 'ui-btn-active ui-state-persist' : '')  %></li>
+    <li><%= link_to 'Friends', players_path, class: (is_friends_section? ? 'ui-btn-active ui-state-persist' : '')  %></li>
+    <li><%= link_to 'Profile', users_path, class: (is_users_section? ? 'ui-btn-active ui-state-persist' : '')  %></li>
+  </ul>
+</div>
+

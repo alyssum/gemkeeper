@@ -1,8 +1,8 @@
 <div data-role="header">
   <%= link_to 'Add', new_game_session_path, "data-icon" => "plus", "class" => "ui-btn-right" %>
-  <%= link_to 'Refresh', url_for(params), "data-icon" => "refresh", "class" => "ui-btn-left" %>
+  <%= link_to 'Refresh', '#', "data-icon" => "refresh", "class" => "ui-btn-left", "onclick" => "location.reload();" %>
   <h3>Gêmkeeper</h3>
-  <%= render 'navbar' %>
+  <%= render 'layouts/navbar' %>
 </div>
 
 <div data-role="content">

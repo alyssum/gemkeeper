@@ -1,4 +1,10 @@
 class Users::RegistrationsController < Devise::RegistrationsController
+  
+  # GET /users
+  def show
+  end
+
+  # POST /users
   def create
     # Associate existing player if there is one to user
     super do |resource|

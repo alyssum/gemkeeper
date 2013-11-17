@@ -1,0 +1,16 @@
+<div data-role="header">
+  <%= link_to 'Edit', edit_user_registration_path, "data-icon" => "edit", "class" => "ui-btn-right" %>
+  <h3>Profile</h3>
+  <%= render 'layouts/navbar' %>
+</div>
+
+<div data-role="content">
+  <p id="notice" class="ui-bar-a ui-bar ui-corner-all" ><%= notice %></p>
+
+  <h4>Name</h4>
+  <p><%= current_user.player.name %></p>
+
+  <h4>Email</h4>
+  <p><%= current_user.email %></p>
+
+</div>
