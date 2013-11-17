@@ -28,6 +28,8 @@ class PlayersController < ApplicationController
 
     respond_to do |format|
       if @player.save
+        PlayerMailer.invite_instructions(@player).deliver
+
         format.html { redirect_to @player, notice: 'Player was successfully created.' }
         format.json { render action: 'show', status: :created, location: @player }
       else

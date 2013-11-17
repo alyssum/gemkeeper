@@ -77,4 +77,7 @@ Gemkeeper::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  # Default host to be used in urls when sending emails
+  config.action_mailer.default_url_options = { host: 'gemkeeper.herokuapp.com' }
 end

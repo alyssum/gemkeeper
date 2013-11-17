@@ -1,4 +1,5 @@
 class Game < ActiveRecord::Base
+  # TODO: Should not be able to delete game if it has sessions
   has_many :sessions
   has_many :participations, through: :sessions
   has_many :players, through: :participations

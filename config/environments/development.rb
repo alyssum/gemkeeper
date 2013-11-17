@@ -27,6 +27,6 @@ Gemkeeper::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-  # Needed for Devise mailing
+  # Default host to be used in urls when sending emails
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 end
