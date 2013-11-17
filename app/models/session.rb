@@ -7,5 +7,4 @@ class Session < ActiveRecord::Base
   validates :game_id, presence: true
   validates :date, presence: true
 
-  accepts_nested_attributes_for :participations
 end

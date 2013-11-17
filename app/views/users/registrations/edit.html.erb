@@ -11,16 +11,23 @@
   <%= devise_error_messages! %>
 
   <ul data-role="listview" data-inset="true">
-    <!-- TODO: This should update the player's email as well -->
+    <%= fields_for(resource.player) do |p| %>
+      <li class="ui-field-contain">
+        <%= p.label :name %>
+        <%= p.text_field :name, :autofocus => true %>
+      </li>
+    <% end %>
     <li class="ui-field-contain">
       <%= f.label :email %>
-      <%= f.email_field :email, :autofocus => true %>
+      <%= f.email_field :email %>
     </li>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <li class="ui-field-contain">
+        <label>Unconfirmed Email</label>
+        <label><%= resource.unconfirmed_email %></label>
+      </li>
+    <% end %>
     <li class="ui-field-contain">
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-      <% end %>
-
       <%= f.label :password %> 
       <%= f.password_field :password, :autocomplete => "off" %>
     </li>
