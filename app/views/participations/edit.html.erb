@@ -2,7 +2,7 @@
   <%= link_to 'Delete', @participation, method: :delete, data: { confirm: 'Are you sure?' }, "data-icon" => "minus", "class" => "ui-btn-right" %>
   <%= link_to 'Back', game_session_path(@session), "data-icon" => "back", "class" => "ui-btn-left" %>
   <h3><%= @session.game.name %> Participant</h3>
-  <%= render 'layout/navbar' %>
+  <%= render 'layouts/navbar' %>
 </div>
 
 <div data-role="content">
