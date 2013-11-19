@@ -1,6 +1,8 @@
 <% title 'Gêmkeeper' %>
 
 <div data-role="content">
+  <p id="notice" class="ui-bar-a ui-bar ui-corner-all" ><%= notice %></p>
+
   <ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Search games..." >
   <% @games.each do |game| %>
       <li data-theme="c">

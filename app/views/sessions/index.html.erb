@@ -1,6 +1,8 @@
 <% title 'Gêmkeeper' %>
 
 <div data-role="content">
+  <p id="notice" class="ui-bar-a ui-bar ui-corner-all" ><%= notice %></p>
+
   <ul data-role="listview" data-inset="true">
   <% @session_dates.each do |session_date, sessions| %>
     <li data-role="list-divider"><%= session_date.strftime("%A, %e %B %Y") %><span class="ui-li-count"><%= sessions.count %></span></li>
