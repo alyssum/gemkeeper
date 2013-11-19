@@ -1,8 +1,4 @@
-<div data-role="header">
-  <%= link_to 'Back', :back, "data-icon" => "back", "class" => "ui-btn-left" %>
-  <h3>Session</h3>
-  <%= render 'layouts/navbar' %>
-</div>
+<% title 'New Session' %>
 
 <div data-role="content">
   <%= form_for(@session, :url => game_sessions_path) do |f| %>

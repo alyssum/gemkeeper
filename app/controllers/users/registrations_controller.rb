@@ -1,9 +1,5 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   
-  # GET /users
-  def show
-  end
-
   # POST /users
   def create
     # Associate existing player if there is one to user
@@ -25,7 +21,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # The path used after editing user.
   def after_update_path_for(resource)
-    users_path
+    player_path(resource.player)
   end
 
   # The path used after sign up. 

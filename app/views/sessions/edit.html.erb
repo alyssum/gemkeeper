@@ -1,9 +1,4 @@
-<div data-role="header">
-  <%= link_to 'Delete', game_session_path(@session), method: :delete, data: { confirm: 'Are you sure?' }, "data-icon" => "minus", "class" => "ui-btn-right" %>
-  <%= link_to 'Back', :back, "data-icon" => "back", "class" => "ui-btn-left" %>
-  <h3>Session</h3>
-  <%= render 'layouts/navbar' %>
-</div>
+<% title 'Session' %>
 
 <div data-role="content">
   <%= form_for(@session, :url => game_session_path(@session) ) do |f| %>

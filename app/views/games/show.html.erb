@@ -1,9 +1,4 @@
-<div data-role="header">
-  <%= link_to 'Edit', edit_game_path(@game), "data-icon" => "edit", "class" => "ui-btn-right" %>
-  <%= link_to 'Back', games_path, "data-icon" => "back", "class" => "ui-btn-left" %>
-  <h3><%= @game.name %></h3>
-  <%= render 'layouts/navbar' %>
-</div>
+<% title @game.name %>
 
 <div data-role="content">
   <p id="notice" class="ui-bar-a ui-bar ui-corner-all" ><%= notice %></p>

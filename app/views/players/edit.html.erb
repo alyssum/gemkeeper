@@ -1,9 +1,4 @@
-<div data-role="header">
-  <%= link_to 'Delete', @player, method: :delete, data: { confirm: 'Are you sure?' }, "data-icon" => "minus", "class" => "ui-btn-right" %>
-  <%= link_to 'Back', player_path(@player), "data-icon" => "back", "class" => "ui-btn-left" %>
-  <h3><%= @player.name %></h3>
-  <%= render 'layouts/navbar' %>
-</div>
+<% title @player.name %>
 
 <div data-role="content">
   <%= render 'form' %>

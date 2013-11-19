@@ -1,10 +1,6 @@
 Gemkeeper::Application.routes.draw do
 
   devise_for :users, :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'register' }, :controllers => {:registrations => 'users/registrations'}
-  as :user do
-    get 'users' => 'users/registrations#show', :as => :users
-  end
-
     
   resources :games, shallow: true do
     resources :roles, except: [:show, :index]

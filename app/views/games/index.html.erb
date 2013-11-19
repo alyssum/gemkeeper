@@ -1,12 +1,7 @@
-<div data-role="header">
-  <%= link_to 'Add', new_game_path, "data-icon" => "plus", "class" => "ui-btn-right" %>
-  <%= link_to 'Refresh', '#', "data-icon" => "refresh", "class" => "ui-btn-left", "onclick" => "location.reload();" %>
-  <h3>Gêmkeeper</h3>
-  <%= render 'layouts/navbar' %>
-</div>
+<% title 'Gêmkeeper' %>
 
 <div data-role="content">
-  <ul data-role="listview" data-inset="true">
+  <ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Search games..." >
   <% @games.each do |game| %>
       <li data-theme="c">
       <a href="<%= game_path(game) %>" data-transition="slide">

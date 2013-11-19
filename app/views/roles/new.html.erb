@@ -1,8 +1,4 @@
-<div data-role="header">
-  <%= link_to 'Back', :back, "data-icon" => "back", "class" => "ui-btn-left" %>
-  <h3><%= @game.name %> Role</h3>
-  <%= render 'layouts/navbar' %>
-</div>
+<% title 'New Role' %>
 
 <div data-role="content">
   <%= render 'form' %>

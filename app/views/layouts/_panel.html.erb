@@ -1,0 +1,16 @@
+<div data-role="panel" id="settings-panel" data-theme="b">
+  <ul data-role="listview">
+    <li data-theme="b" data-icon="false">
+      <%= link_to edit_user_registration_path do %>
+        <h2>My Account</h2>
+      <% end %>
+    </li> 
+    <li data-theme="b" data-icon="false">
+      <%= link_to destroy_user_session_path,  method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <h2>Logout</h2>
+      <% end %>
+    </li> 
+  </ul>
+</div>
+
+

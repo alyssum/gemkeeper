@@ -1,9 +1,4 @@
-<div data-role="header">
-  <%= link_to 'Delete', @participation, method: :delete, data: { confirm: 'Are you sure?' }, "data-icon" => "minus", "class" => "ui-btn-right" %>
-  <%= link_to 'Back', game_session_path(@session), "data-icon" => "back", "class" => "ui-btn-left" %>
-  <h3><%= @session.game.name %> Participant</h3>
-  <%= render 'layouts/navbar' %>
-</div>
+<% title 'Participant' %>
 
 <div data-role="content">
     <%= render 'form' %>

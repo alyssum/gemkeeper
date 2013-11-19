@@ -1,0 +1,14 @@
+<!-- Left-hand button-->
+<%= link_to 'Settings', '#settings-panel', 'data-icon' => 'bars', 'class' => 'ui-btn-left' %>
+
+<!-- Right-hand button-->
+<% if is_addable? %>
+  <%= link_to 'Add', {controller: controller.controller_name, action: 'new'}, 'data-icon' => 'plus', 'class' => 'ui-btn-right' %>
+<% elsif is_editable? %>
+  <%= link_to 'Edit', {controller: controller.controller_name, action: 'edit'}, 'data-icon' => 'edit', 'class' => 'ui-btn-right' %>
+<% elsif is_deletable? %>
+  <%= link_to 'Delete', {action: 'destroy', id: params[:id]},  method: :delete, data: { confirm: 'Are you sure?' }, 'data-icon' => 'delete', 'class' => 'ui-btn-right' %>
+<% elsif is_cancelable? %>
+  <%= link_to 'Cancel', :back, 'data-icon' => 'forbidden', 'class' => 'ui-btn-right' %>
+<% end %>
+
