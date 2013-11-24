@@ -61,7 +61,11 @@ class GamesController < ApplicationController
   # DELETE /games/1
   # DELETE /games/1.json
   def destroy
-    @game.destroy
+    begin
+      @game.destroy
+    rescue ActiveRecord::DeleteRestrictionError => e
+      flash[:notice] = "Cannot delete " + @game.name + " because it has associated sessions."
+    end
     respond_to do |format|
       format.html { redirect_to games_url }
       format.json { head :no_content }
