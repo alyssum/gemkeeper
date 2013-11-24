@@ -56,7 +56,11 @@ class PlayersController < ApplicationController
   # DELETE /players/1
   # DELETE /players/1.json
   def destroy
-    @player.destroy
+    begin
+      @player.destroy
+    rescue ActiveRecord::DeleteRestrictionError => e
+      flash[:notice] = "Cannot delete " + @player.name + " because this player has associated participations."
+    end
     respond_to do |format|
       format.html { redirect_to players_url }
       format.json { head :no_content }
