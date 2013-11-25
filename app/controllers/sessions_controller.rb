@@ -32,6 +32,7 @@ class SessionsController < ApplicationController
   # POST /sessions.json
   def create
     @session = Session.new(session_params)
+    @session.created_by = current_user.id
 
     respond_to do |format|
       if @session.save
@@ -61,7 +62,11 @@ class SessionsController < ApplicationController
   # DELETE /sessions/1
   # DELETE /sessions/1.json
   def destroy
-    @session.destroy
+    if @session.created_by == current_user.id
+      @session.destroy
+    else
+      flash[:notice] = "Cannot delete session as you did not create it."
+    end
     respond_to do |format|
       format.html { redirect_to game_sessions_url }
       format.json { head :no_content }

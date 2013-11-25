@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :player, autosave: true
+  has_many :sessions, :foreign_key => 'created_by'
 
   accepts_nested_attributes_for :player
 end
